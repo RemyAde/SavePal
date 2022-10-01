@@ -1,0 +1,42 @@
+{% extends 'base.html' %} 
+
+
+{% block title %}Piggy{% endblock title %} 
+
+
+{% block content %} 
+<br>
+<br>
+    <div class="container row">
+        <div class="col-md-6">
+            <a href="{% url 'savings_list' %}">Back to savings</a>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-5">
+            <h2>{{ piggy.desired_item }}</h2>
+            <p><b>Price:</b> {{ piggy.desired_item_cost }}</p>
+            <p><b>Daily expenses:</b> {{ piggy.daily_expenses }}</p>
+            <p><b>Monthly donations:</b> {{ piggy.monthly_donations }}</p>
+            <p><b>Monthly bills:</b> {{ piggy.monthly_bills }}</p>
+            <p><b>Monthly Income:</b> {{ piggy.monthly_income }}</p>
+            {% if error %} 
+            <div class="alert alert-danger" role="alert">
+                <p>{{ error }}</p>
+                <p>You have a monthly debt of <b>-₦{{ spare_cash }}</b></p>                
+            </div>
+            {% endif %}
+            {% if not error %}
+            <div class="alert alert-info" role="alert">
+                <p>You have to save <b>₦{{ spare_cash }}</b> daily for the next <b>{{ days }} days</b></p>
+            </div>
+            {% endif %}
+
+            <a href="{% url 'savings_edit' piggy.pk %}" role="button" class="btn btn-primary">Edit</a>
+            <a href="{% url 'savings_delete' piggy.pk %}" role="button" class="btn btn-danger">Delete</a>
+        </div>
+    </div>
+
+{% endblock content %}
+
+    

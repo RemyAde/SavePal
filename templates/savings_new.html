@@ -1,0 +1,51 @@
+{% extends 'base.html' %} 
+
+{% block title %}New Piggy{% endblock title %} 
+
+
+{% block content %}
+
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-5">
+            <h2>New Piggy</h2>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-5">
+            <form action="" method="post">
+                {% csrf_token %} 
+
+                <div class="form-group">
+
+                    <label for="monthly_income">Monthly income</label>
+                    <input type="number" step="any" name="monthly_income" id="monthly_income" class="form-control">
+                    <br>
+
+                    <label for="desired_item">Desired item</label>
+                    <input type="text" name="desired_item" id="desired_item" class="form-control">
+                    <br>
+
+                    <label for="desired_item_cost">Desired item price</label>
+                    <input type="number" step="any" name="desired_item_cost" id="desired_item_cost" class="form-control">
+                    <br>
+
+                    <label for="daily_expenses">Daily expenses</label>
+                    <input type="number" step="any" name="daily_expenses" id="daily_expenses" class="form-control">
+                    <br>
+
+                    <label for="monthly_donations">Monthly donations <small><i>(tithes, charity, contributions, etc)</i></small></label>
+                    <input type="number" step="any" name="monthly_donations" id="monthly_donations" class="form-control">
+                    <br>
+
+                    <label for="monthly_bills">Monthly bills</label>
+                    <input type="number" step="any" name="monthly_bills" id="monthly_bills" class="form-control">
+
+                </div>
+                <br>
+                    <button class="btn btn-success" type="submit">Create</button>
+            </form>
+            <br>
+        </div>
+    </div>
+
+{% endblock content %}

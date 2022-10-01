@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    "savings.apps.SavingsConfig",
     "users.apps.UsersConfig",
     "django.contrib.admin",
     "django.contrib.auth",
@@ -124,3 +125,6 @@ AUTH_USER_MODEL = "users.CustomUser"
 LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "home"
 LOGIN_URL = "login"
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
