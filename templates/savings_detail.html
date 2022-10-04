@@ -1,5 +1,5 @@
 {% extends 'base.html' %} 
-
+{% load humanize %}
 
 {% block title %}Piggy{% endblock title %} 
 
@@ -15,20 +15,20 @@
     <div class="row justify-content-center mt-5">
         <div class="col-md-5">
             <h2>{{ piggy.desired_item }}</h2>
-            <p><b>Price:</b> {{ piggy.desired_item_cost }}</p>
-            <p><b>Daily expenses:</b> {{ piggy.daily_expenses }}</p>
-            <p><b>Monthly donations:</b> {{ piggy.monthly_donations }}</p>
-            <p><b>Monthly bills:</b> {{ piggy.monthly_bills }}</p>
-            <p><b>Monthly Income:</b> {{ piggy.monthly_income }}</p>
+            <p><b>Price:</b> ₦{{ piggy.desired_item_cost|intcomma }}</p>
+            <p><b>Daily expenses:</b> ₦{{ piggy.daily_expenses|intcomma }}</p>
+            <p><b>Monthly donations:</b> ₦{{ piggy.monthly_donations|intcomma }}</p>
+            <p><b>Monthly bills:</b> ₦{{ piggy.monthly_bills|intcomma }}</p>
+            <p><b>Monthly Income:</b> ₦{{ piggy.monthly_income|intcomma }}</p>
             {% if error %} 
             <div class="alert alert-danger" role="alert">
                 <p>{{ error }}</p>
-                <p>You have a monthly debt of <b>-₦{{ spare_cash }}</b></p>                
+                <p>You have a monthly debt of <b>-₦{{ spare_cash|intcomma }}</b></p>                
             </div>
             {% endif %}
             {% if not error %}
             <div class="alert alert-info" role="alert">
-                <p>You have to save <b>₦{{ spare_cash }}</b> daily for the next <b>{{ days }} days</b></p>
+                <p>You have to save <b>₦{{ spare_cash|intcomma }}</b> daily for the next <b>{{ days|intcomma }} days</b></p>
             </div>
             {% endif %}
 
