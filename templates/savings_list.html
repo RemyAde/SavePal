@@ -6,9 +6,9 @@
 
 {% block content %} 
     <div class="row justify-content-center mt-5">
-        <div class="col-md-5">
+        <div class="col-md-5 text-center">
             {% if object_list %} 
-                <h1>{{ object_list.count }} Current Piggy{{ object_list.count|pluralize }}
+                <h1>My Piggies
                 </h1>
                 <br>
             {% else %} 
@@ -24,7 +24,7 @@
           <div class="card text-center border-success mb-3">
             <div class="card-body rounded">
               <h5 class="card-title">{{ piggy.desired_item }}</h5>
-              <p class="card-text">Price: ₦{{ piggy.desired_item_cost|intcomma }}</p>
+              <h3 class="card-text">₦{{ piggy.desired_item_cost|intcomma }}</h3>
               <a href="{% url 'savings_detail' piggy.pk %}" class="btn btn-primary">View</a>
             </div>
           </div>

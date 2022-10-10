@@ -20,17 +20,23 @@
             <p><b>Monthly donations:</b> ₦{{ piggy.monthly_donations|intcomma }}</p>
             <p><b>Monthly bills:</b> ₦{{ piggy.monthly_bills|intcomma }}</p>
             <p><b>Monthly Income:</b> ₦{{ piggy.monthly_income|intcomma }}</p>
-            {% if error %} 
+            {% if piggy.spare_cash < 0 %} 
             <div class="alert alert-danger" role="alert">
-                <p>{{ error }}</p>
-                <p>You have a monthly debt of <b>-₦{{ spare_cash|intcomma }}</b></p>                
+                <p>
+                    Oops. You don't have enough cash to save up. Why not review your expenses and see what you can do without xx.
+                </p>
+                <p>You have a monthly debt of <b>-₦{{ piggy.spare_cash|intcomma }}</b></p>                
+            </div>
+            {% else %} 
+            <div class="alert alert-info" role="alert">
+                <p>You have to save <b>₦{{ piggy.spare_cash|intcomma }}</b> daily for the next <b>{{ piggy.num_days|intcomma }} day{{ piggy.num_days|pluralize }}</b></p>
             </div>
             {% endif %}
-            {% if not error %}
+            <!-- {% if not error %}
             <div class="alert alert-info" role="alert">
                 <p>You have to save <b>₦{{ spare_cash|intcomma }}</b> daily for the next <b>{{ days|intcomma }} days</b></p>
             </div>
-            {% endif %}
+            {% endif %} -->
 
             <a href="{% url 'savings_edit' piggy.pk %}" role="button" class="btn btn-primary">Edit</a>
             <a href="{% url 'savings_delete' piggy.pk %}" role="button" class="btn btn-danger">Delete</a>
