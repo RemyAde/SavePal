@@ -21,11 +21,11 @@
     <div class="row">
         {% for piggy in object_list %}
         <div class="col-sm-4">
-          <div class="card text-center border-success mb-3">
-            <div class="card-body rounded">
+          <div class="card text-center mb-3">
+            <div class="card-body">
               <h5 class="card-title">{{ piggy.desired_item }}</h5>
               <h3 class="card-text">₦{{ piggy.desired_item_cost|intcomma }}</h3>
-              <a href="{% url 'savings_detail' piggy.pk %}" class="btn btn-primary">View</a>
+              <a href="{% url 'savings_detail' piggy.pk %}" class="btn">View</a>
             </div>
           </div>
         </div>
@@ -33,7 +33,7 @@
         <div class="text-center">
             <br>
             <br>
-            <a role="button" class="btn btn-primary" href="{% url 'savings_new' %}">New Piggy</a>
+            <a role="button" class="btn" href="{% url 'savings_new' %}">New Piggy</a>
             <p>
                 <br>
             </p>

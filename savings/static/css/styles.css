@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+/* GENERAL */
+body {
+    font-family: 'Montserrat';
+    background-color: #779c6e !important;
+}
+
+.navbar a{
+    font-family: 'Bitter', serif;
+    font-family: 'Dangrek', cursive;
+}
+
+.card {
+    background-color: #cfe6e6;
+}
+
+.card-body {
+    color: #115e23;
+}
+
+.text-center button {
+    color: #62bf8f;
+}

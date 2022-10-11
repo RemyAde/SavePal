@@ -3,14 +3,9 @@ SavePal is a personal online piggy bank. Users can sign up, provide information 
 <br>
 <br>
 
-
-## demo shots
-<p float="left">
-    <img src="pictures/mockup_0.png">
-    <img src="pictures/mockup_2.png">
-    <img src="pictures/mockup_4.png">
-</p>
-
+<img src="pictures/landing.png" width=800>
+<br>
+<br>
 
 ## Technologies
 * Python

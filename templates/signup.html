@@ -1,8 +1,15 @@
 {% extends 'base.html' %} 
+{% load crispy_forms_tags %}
 
 {% block title %}Sign Up{% endblock title %} 
 
 {% block content %} 
+<style>
+    .asteriskField {
+        display: none;
+    }
+</style>
+
 <div class="row justify-content-center mt-5">
     <div class="col-md-5">
         <h2>Sign Up</h2>
@@ -13,29 +20,22 @@
         <form action="" method="post">
             {% csrf_token %} 
             <div class="form-group">
-                <label for="first_name">First name</label>
-                <input type="text" name="first_name" class="form-control" id="first_name">
+                {{ form.first_name|as_crispy_field }}
             </div>
             <div class="form-group">
-                <label for="last_name">Last name</label>
-                <input type="text" name="last_name" class="form-control" id="last_name">
+                {{ form.last_name|as_crispy_field }}
             </div>
             <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" name="username" class="form-control" id="username" aria-describedby="usernameHelp">
-                <small id="usernameHelp" class="form-text text-muted">Your username must be unique. We'll let you know if someone has taken it already.</small>
+                {{ form.username|as_crispy_field }}
             </div>
             <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" name="email" class="form-control" id="email">
+                {{ form.email|as_crispy_field }}
             </div>
             <div class="form-group">
-                <label for="password1">Password</label>
-                <input type="password" name="password1" class="form-control" id="password1">
+                {{ form.password1|as_crispy_field}}
             </div>
             <div class="form-group">
-                <label for="password2">Confirm Password</label>
-                <input type="password" name="password2" class="form-control" id="password2">
+                {{ form.password2|as_crispy_field }}
             </div>
             <br>
             <button class="btn btn-success" type="submit">Sign Up</button>
