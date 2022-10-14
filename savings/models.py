@@ -27,7 +27,7 @@ class Piggy(models.Model):
     def spare_cash(self):
         self.extra_cash = self.monthly_income - ((self.daily_expenses * 30) + self.monthly_donations
                         + self.monthly_bills + self.miscellaneous)
-        if -(self.extra_cash) == abs(self.extra_cash):
+        if -(self.extra_cash) == abs(self.extra_cash) or self.extra_cash == 0:
             return self.extra_cash
             # I assume the person is going to have miscellaneous expense
             # which can still be put in the amount of debt that will be owed month end
@@ -44,7 +44,8 @@ class Piggy(models.Model):
             daily_amount = round(daily_amount, 2)
             print(f"cost: {self.desired_item_cost}, extra cash: {self.extra_cash}")
             return daily_amount
-        
+            # the person has enough money to purchase the desired item on pay check day, after he will meet all monthly needs,
+            # the whole goal of the app is to ensure you save. LOL
 
     def num_days(self):
         if self.desired_item_cost > self.extra_cash:

@@ -7,6 +7,10 @@ name = "pypi"
 django = "*"
 django-crispy-forms = "*"
 crispy-bootstrap5 = "*"
+gunicorn = "*"
+whitenoise = "==3.3.1"
+django-mathfilters = "*"
+python-dotenv = "*"
 
 [dev-packages]
 

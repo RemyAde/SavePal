@@ -2,5 +2,9 @@ asgiref==3.5.2
 crispy-bootstrap5==0.7
 Django==4.1.2
 django-crispy-forms==1.14.0
+django-mathfilters==1.0.0
+gunicorn==20.1.0
+python-dotenv==0.21.0
 sqlparse==0.4.3
-tzdata==2022.4
+tzdata==2022.5
+whitenoise==3.3.1

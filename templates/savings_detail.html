@@ -1,6 +1,7 @@
 {% extends 'base.html' %} 
 {% load humanize %}
 
+
 {% block title %}Piggy{% endblock title %} 
 
 
@@ -25,7 +26,13 @@
                 <p>
                     Oops. You don't have enough cash to save up. Why not review your expenses and see what you can do without xx.
                 </p>
-                <p>You have a monthly debt of <b>-₦{{ piggy.spare_cash|intcomma }}</b></p>                
+                <p>You have a monthly debt of <b class="negative-cash">₦{{ piggy.spare_cash|intcomma }}</b></p>
+            </div>
+            {% elif piggy.spare_cash == 0 %}
+            <div class="alert alert-danger" role="alert">
+                <p>
+                    Oops. You don't have enough cash to save up. Why not review your expenses and see what you can do without xx.</p>
+                    <p>You have <b>₦{{ piggy.spare_cash }}</b> left</p>
             </div>
             {% else %} 
             <div class="alert alert-info" role="alert">
