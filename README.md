@@ -1,5 +1,5 @@
 # SavePal
-SavePal is a personal online piggy bank. Users can sign up, provide information on their monthly income and expenditure, the desired item they need to save up for, and its price. SavePal performs the necessary calculations, adding in 2% miscellaneous expenses and viola! *the amount savable per day and the number of days to save for*
+SavePal is a personal online piggy bank. Users can sign up, provide information on their monthly income and expenditure, the desired item they need to save up for, and its price. SavePal performs the necessary calculations, adding in 2% miscellaneous expenses and viola! *the amount savable per day and the number of days to save for*. Check [here](https://remy.pythonanywhere.com) to view.
 <br>
 <br>
 
